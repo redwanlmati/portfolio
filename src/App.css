@@ -1,0 +1,46 @@
+@media (min-width: 0px) {
+    .rotate-lg-45 {
+      transform: rotate(13deg);
+    }
+    .rotate-lg-0 {
+        transform: rotate(0deg);
+      }
+  }
+
+  /* These are the KEY styles - you can add them directly to any object you want in your project */
+  .fancy-border-radius {
+    border-radius: 53% 47% 52% 48% / 36% 41% 59% 64%;
+  }
+
+
+.background-radial-gradient {
+background-color: hsl(218, 41%, 15%);
+background-image: radial-gradient(650px circle at 0% 0%,
+    hsl(218, 41%, 35%) 15%,
+    hsl(218, 41%, 30%) 35%,
+    hsl(218, 41%, 20%) 75%,
+    hsl(218, 41%, 19%) 80%,
+    transparent 100%),
+    radial-gradient(1250px circle at 100% 100%,
+    hsl(218, 41%, 45%) 15%,
+    hsl(218, 41%, 30%) 35%,
+    hsl(218, 41%, 20%) 75%,
+    hsl(218, 41%, 19%) 80%,
+    transparent 100%);
+}
+
+.svg-icon {
+  width: 12em;
+  height: 12em;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #fdfeff;
+}
+
+.svg-icon circle {
+  fill: #fdfeff;
+  stroke-width: 1;
+}
