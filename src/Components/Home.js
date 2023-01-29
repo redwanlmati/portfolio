@@ -128,7 +128,7 @@ function Home() {
                     </Menu> */}
                     
                     <div>
-                    <button onClick={()=> {scrollToSection(contact)}}  type="button" class="text-white bg-sky-600 hover:bg-sky-700 focus:ring-4 focus:outline-none font-medium rounded-full text-m px-8 py-2.5 text-center mr-3 md:mr-0">Contact</button>
+                    <button onClick={()=> {scrollToSection(contact)}}  type="button" class="text-white bg-sky-700 hover:bg-sky-700 focus:ring-4 focus:outline-none font-medium rounded-full text-m px-8 py-2.5 text-center mr-3 md:mr-0 ease-in duration-200">Contact</button>
 
                     </div>
                 </div>
@@ -169,11 +169,11 @@ function Home() {
                         <div className="font-black text-sky-600 text-4xl">Web / Graphic Designer</div>
                         <p className="font-medium text-2xl text-gray-900">I have plus 3 years of experience as a designer for web and graphics, if you have any brilliant ideas you look to convert into reality you're in the right place. You can reach out to me via the links below.</p>
                         <div className="mt-4 flex">
-                            <button onClick={()=> {scrollToSection(contact)}}  type="button" class=" gap-2 inline-flex items-center text-white bg-sky-600 hover:bg-sky-700 focus:ring-4 focus:outline-none font-medium rounded-lg lg:text-m text-sm lg:px-8 px-4 lg:py-2.5 py-2.5 text-center mr-3 md:mr-0 ">
+                            <button onClick={()=> {scrollToSection(contact)}}  type="button" class=" gap-2 inline-flex items-center text-white bg-sky-700 hover:outline-none ease-in duration-200 hover:bg-sky-700 focus:ring-4 focus:outline-none font-medium rounded-lg lg:text-m text-sm lg:px-8 px-4 lg:py-2.5 py-2.5 text-center mr-3 md:mr-0 ">
                                 <IoIosMail className="lg:text-2xl" />
                                 Contact
                             </button>
-                            <a href="https://drive.google.com/file/d/11VrjXYb955Gq1VjkvcCCjJMZnofCRRE8/view?usp=share_link" target="_blank"><button type="button" class="gap-2 inline-flex items-center lg:ml-4 text-gray-900 outline outline-sky-700 hover:text-white hover:bg-sky-700 focus:ring-4 focus:outline-none font-medium rounded-lg lg:text-m text-sm lg:text-m lg:px-8 px-2 lg:py-2.5 py-2.5 text-center mr-3 md:mr-0">
+                            <a href="https://drive.google.com/file/d/11VrjXYb955Gq1VjkvcCCjJMZnofCRRE8/view?usp=share_link" target="_blank"><button type="button" class="ease-in duration-200 gap-2 inline-flex items-center lg:ml-4 text-gray-900 outline outline-sky-700  focus:ring-4 focus:outline-none font-medium rounded-lg lg:text-m text-sm lg:text-m lg:px-8 px-2 lg:py-2.5 py-2.5 text-center mr-3 md:mr-0">
                                 <HiDocumentDownload className="lg:text-2xl" />
                                 Download CV
                             </button></a>
@@ -308,7 +308,7 @@ function Home() {
                             <p className="text-gray-700 text-base mb-4">
                                 Design and implementation of the front- end of an e-commerce website.
                             </p>
-                            <a href="https://www.behance.net/gallery/162439705/Fantasy-books-website-design/modules/916287527" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div></a>
+                            <a href="https://www.behance.net/gallery/162439705/Fantasy-books-website-design/modules/916287527" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-sky-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div></a>
                         
                         </div>
                         </div>
@@ -323,7 +323,7 @@ function Home() {
                             Full branding for "Fanatist" including logo, social posts, promotion videos etc...
 
                             </p>
-                            <a href="https://www.behance.net/gallery/162439941/Logo-design-and-mockup/modules/916289151" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
+                            <a href="https://www.behance.net/gallery/162439941/Logo-design-and-mockup/modules/916289151" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-sky-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
                             </a>
                         </div>
                         </div>
@@ -338,7 +338,7 @@ function Home() {
                             Design of the UI/UX of fanatist for both web usage and mobile apps optimization.
 
                             </p>
-                            <a href="https://www.behance.net/gallery/162440177/UIUX-Design-mockup/modules/916290483" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
+                            <a href="https://www.behance.net/gallery/162440177/UIUX-Design-mockup/modules/916290483" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-sky-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
                             </a></div>
                         </div>
 
@@ -352,7 +352,7 @@ function Home() {
                             Livery concept design for Royal Air Maroc with the collaboration of "Ntl9aw fbladna".
 
                             </p>
-                            <a href="https://www.behance.net/gallery/162440219/Livery-Concept-Design/modules/916290773" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
+                            <a href="https://www.behance.net/gallery/162440219/Livery-Concept-Design/modules/916290773" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-sky-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
                             </a></div>
                         </div>
 
@@ -366,7 +366,7 @@ function Home() {
                             Logo conception and Design for national technology company TECSO.
 
                             </p>
-                            <a href="https://www.behance.net/gallery/162440237/Logo-Design-mockup/modules/916290857" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
+                            <a href="https://www.behance.net/gallery/162440237/Logo-Design-mockup/modules/916290857" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-sky-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
                             </a></div>
                         </div>
 
@@ -379,7 +379,7 @@ function Home() {
                             <p className="text-gray-700 text-base mb-4">
                             "WINGS OF MOROCCO" Promotion video for Royal Air Maroc with the latest simulation technology.
                             </p>
-                            <a href="https://youtu.be/oVTWGb1Whsg" target="_blank"><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Youtube</button></div></a>
+                            <a href="https://youtu.be/oVTWGb1Whsg" target="_blank"><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-sky-700 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Youtube</button></div></a>
                         </div>
                         </div>
                         
@@ -463,7 +463,7 @@ function Home() {
                                 w-full
                                 px-6
                                 py-2.5
-                                bg-blue-600
+                                bg-sky-700
                                 text-white
                                 font-medium
                                 text-xs
@@ -484,7 +484,7 @@ function Home() {
                                     <div className="lg:mb-12 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                                     <div className="flex items-start">
                                         <div className="shrink-0">
-                                        <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                                        <div className="p-4 bg-sky-700 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#fbfbfb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
                                         </div>
                                         </div>
@@ -500,7 +500,7 @@ function Home() {
                                     <div className="mb-12 md:mb-0 grow-0 shrink-0 basis-auto w-full md:w-6/12 px-3 lg:px-6">
                                     <div className="flex align-start">
                                         <div className="shrink-0">
-                                            <div className="p-4 bg-blue-600 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
+                                            <div className="p-4 bg-sky-700 rounded-md shadow-md w-14 h-14 flex items-center justify-center">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                                             </div>
                                         </div>
