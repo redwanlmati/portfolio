@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { useRef, useState } from "react";
+import emailjs from '@emailjs/browser';
+
 
 import { Menu } from "@headlessui/react";
 
@@ -42,6 +44,8 @@ function Home() {
     const services = useRef(null);
     const portfolio = useRef(null);
     const contact = useRef(null);
+    
+    const [info, setInfo] = useState();
 
     const [currentSection, setCurrentSection] = useState(null);
 
@@ -52,10 +56,40 @@ function Home() {
         })
     }
     
-  
+    const form = useRef();
+    
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        emailjs.sendForm('service_mbxouxl', 'template_omre2pb', form.current, 'Q_nQ7HRx7_XtEMehA')
+          .then((result) => {
+              if(result.text == "OK" && message && mail && name){
+                setInfo(
+                    <div class="flex items-center bg-green-700 text-white text-sm font-bold px-4 py-3 justify-center" role="alert">
+                        <p>Message sent successfuly!</p>
+                    </div>
+                  )
+                  
+                  setName("");
+                  setMail("");
+                  setMessage("");
+              }
+          }, (error) => {
+              
+          });
+    };
 
+    const [name, setName] = useState("");
+    const [mail, setMail] = useState("");
+    const [message, setMessage] = useState("");
 
-    return (
+    console.log(name, mail, message)
+
+    const handleNameChange = (name) => {setName(name)}
+    const handleMailChange = (mail) => {setMail(name)}
+    const handleMessageChange = (message) => {setMessage(name)}
+
+    return (    
     <>
 
     <Helmet>
@@ -139,10 +173,10 @@ function Home() {
                                 <IoIosMail className="lg:text-2xl" />
                                 Contact
                             </button>
-                            <button type="button" class="gap-2 inline-flex items-center lg:ml-4 text-gray-900 outline outline-sky-700 hover:text-white hover:bg-sky-700 focus:ring-4 focus:outline-none font-medium rounded-lg lg:text-m text-sm lg:text-m lg:px-8 px-2 lg:py-2.5 py-2.5 text-center mr-3 md:mr-0">
+                            <a href="https://drive.google.com/file/d/11VrjXYb955Gq1VjkvcCCjJMZnofCRRE8/view?usp=share_link" target="_blank"><button type="button" class="gap-2 inline-flex items-center lg:ml-4 text-gray-900 outline outline-sky-700 hover:text-white hover:bg-sky-700 focus:ring-4 focus:outline-none font-medium rounded-lg lg:text-m text-sm lg:text-m lg:px-8 px-2 lg:py-2.5 py-2.5 text-center mr-3 md:mr-0">
                                 <HiDocumentDownload className="lg:text-2xl" />
                                 Download CV
-                            </button>
+                            </button></a>
                         </div>
                     </div>
 
@@ -261,18 +295,21 @@ function Home() {
                         <div className="font-extrabold text-5xl">My Portfolio</div>
                     </div>
 
-                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-12">
+                    <div className="grid lg:grid-cols-3 grid-cols-1 gap-12 justify-items-center">
 
                         <div className="rounded-lg shadow-lg bg-white max-w-sm">
+
                         <a href="#!">
                             <img className="rounded-t-lg" src={p1} alt="" />
                         </a>
+                        
                         <div className="p-6">
                             <h5 className="text-gray-900 text-xl font-medium mb-2">Business website</h5>
                             <p className="text-gray-700 text-base mb-4">
-                            Design and implementation of the front- end of an e-commerce website.
+                                Design and implementation of the front- end of an e-commerce website.
                             </p>
-                            <div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
+                            <a href="https://www.behance.net/gallery/162439705/Fantasy-books-website-design/modules/916287527" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div></a>
+                        
                         </div>
                         </div>
 
@@ -286,7 +323,8 @@ function Home() {
                             Full branding for "Fanatist" including logo, social posts, promotion videos etc...
 
                             </p>
-                            <div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
+                            <a href="https://www.behance.net/gallery/162439941/Logo-design-and-mockup/modules/916289151" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
+                            </a>
                         </div>
                         </div>
 
@@ -300,8 +338,8 @@ function Home() {
                             Design of the UI/UX of fanatist for both web usage and mobile apps optimization.
 
                             </p>
-                            <div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
-                        </div>
+                            <a href="https://www.behance.net/gallery/162440177/UIUX-Design-mockup/modules/916290483" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
+                            </a></div>
                         </div>
 
                         <div className="rounded-lg shadow-lg bg-white max-w-sm">
@@ -314,8 +352,8 @@ function Home() {
                             Livery concept design for Royal Air Maroc with the collaboration of "Ntl9aw fbladna".
 
                             </p>
-                            <div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
-                        </div>
+                            <a href="https://www.behance.net/gallery/162440219/Livery-Concept-Design/modules/916290773" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
+                            </a></div>
                         </div>
 
                         <div className="rounded-lg shadow-lg bg-white max-w-sm">
@@ -328,8 +366,8 @@ function Home() {
                             Logo conception and Design for national technology company TECSO.
 
                             </p>
-                            <div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
-                        </div>
+                            <a href="https://www.behance.net/gallery/162440237/Logo-Design-mockup/modules/916290857" target="_blank" ><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Behance</button></div>
+                            </a></div>
                         </div>
 
                         <div className="rounded-lg shadow-lg bg-white max-w-sm">
@@ -341,25 +379,26 @@ function Home() {
                             <p className="text-gray-700 text-base mb-4">
                             "WINGS OF MOROCCO" Promotion video for Royal Air Maroc with the latest simulation technology.
                             </p>
-                            <div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Youtube</button></div>
+                            <a href="https://youtu.be/oVTWGb1Whsg" target="_blank"><div className="flex flex-col items-center"><button type="button" className=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View on Youtube</button></div></a>
                         </div>
                         </div>
                         
-                        
-                        
-
                     </div>
 
                 </div>
+
+
 
                 <div ref={contact} className="mt-20 gap-12">
 
                     <div className="ml-3">
                         <div className="font-regular text-2xl">Get in touch</div>
                         <div className="font-extrabold text-5xl">Contact Me</div>
+                        
                     </div>
 
                     <div className="container my-32 lg:px-6 mx-auto">
+                        
                         {/* Section: Design Block */}
                         <section className="mb-20 text-gray-800">
                         
@@ -367,9 +406,9 @@ function Home() {
                             <div className="block rounded-lg shadow-lg py-10 md:py-12 px-2 md:px-6" style={{marginTop: '-100px', background: 'hsla(0, 0%, 100%, 0.8)', backdropFilter: 'blur(30px)'}}>
                             <div className="flex flex-wrap">
                                 <div className="grow-0 shrink-0 basis-auto w-full xl:w-5/12 px-3 lg:px-6 mb-12 xl:mb-0">
-                                <form>
+                                <form ref={form} onSubmit={sendEmail}>
                                     <div className="form-group mb-6">
-                                    <input type="text" className="form-control block
+                                    <input type="text" name="user_name" value={name} onChange={e=>setName(e.target.value)} className="form-control block 
                                 w-full
                                 px-3
                                 py-1.5
@@ -385,7 +424,7 @@ function Home() {
                                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput7" placeholder="Name" />
                                     </div>
                                     <div className="form-group mb-6">
-                                    <input type="email" className="form-control block
+                                    <input type="email" name="user_email" value={mail} onChange={e=>setMail(e.target.value)} className="form-control block
                                 w-full
                                 px-3
                                 py-1.5
@@ -401,7 +440,7 @@ function Home() {
                                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" id="exampleInput8" placeholder="Email address" />
                                     </div>
                                     <div className="form-group mb-6">
-                                    <textarea className="
+                                    <textarea name="message" value={message} onChange={e=>setMessage(e.target.value)} className="
                                 form-control
                                 block
                                 w-full
@@ -419,11 +458,7 @@ function Home() {
                                 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
                             " id="exampleFormControlTextarea13" rows={3} placeholder="Message" defaultValue={""} />
                                     </div>
-                                    <div className="form-group form-check text-center mb-6">
-                                    <input type="checkbox" className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer" id="exampleCheck87" defaultChecked />
-                                    <label className="form-check-label inline-block text-gray-800 lg:text-base text-sm" htmlFor="exampleCheck87">Send me a copy of this
-                                        message</label>
-                                    </div>
+                                   
                                     <button type="submit" className="
                                 w-full
                                 px-6
@@ -480,7 +515,9 @@ function Home() {
                                 </div>
                             </div>
                             </div>
+                            {info}
                         </div>
+                        
                         </section>
                         {/* Section: Design Block */}
                     </div>
