@@ -28,6 +28,64 @@
   color: #61dafb;
 }
 
+.content-grid{
+  position: relative;
+  text-align: center;
+  color: white;
+
+}
+.content-grid img{
+  opacity: 100%;
+  transition: .3s;
+}
+.content-grid img:hover{
+  opacity: 40%;
+  transition: .3s;
+}
+
+
+.image-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.image {
+  height: auto; /* Adjust the height proportionally based on the image's aspect ratio */
+  transition: opacity 0.3s; /* Add a smooth transition for the image opacity change */
+}
+
+.pp-image{
+  border-radius: 20%;
+  pointer-events: none;
+  -webkit-touch-callout: none;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Hide the text by default */
+  transition: opacity 0.3s; /* Add a smooth transition for the text opacity change */
+}
+
+.image-container:hover .image {
+  opacity: 0.5; /* Reduce the opacity of the image on hover */
+}
+
+.image-container:hover .text-overlay {
+  opacity: 1; /* Show the text on hover */
+}
+
+.contact-button{
+  width: 200px;
+  border-radius: 50px;
+  color: white;
+  background-color: #2A7ACB;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
