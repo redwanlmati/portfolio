@@ -68,158 +68,134 @@ const Contact = () => {
         <body className="lg:w-10/12 ml-auto mr-auto ">
             <div>
 
-              <nav className='container flex flex-wrap items-center justify-between h-32 sticky top-0 z-50 bg-white mx-auto m-0 '>
-                  <div>
-                    <Link to="/"><img src={logo} className="h-8"/></Link>
-                  </div>
-                  <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
-                    <ul className="navbar-elements flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-m md:font-medium md:border-0 md:bg-white ">
-                        <li>
-                        <Link to="/" className="navbar-link">Work</Link> 
-                      </li>
-                      <li>
-                        <Link to="/about" className="navbar-link">About</Link> 
-                      </li>
-                      <li>
-                        <Link to="/contact" className="navbar-link underline underline-offset-8 decoration-2">Contact</Link> 
-                      </li>
-                      <li>
-      
-                          <Link to="https://www.linkedin.com/in/redouane-lmati-3244451b8/" target="_blank" rel="noopener noreferrer"><LinkedInIcon style={{ fontSize: '24px' }}/></Link>
-                          <a href='#' className='m-2' ><InstagramIcon style={{ fontSize: '24px' }}/></a>
-                          <a href='mailto: redwanlmati5@gmail.com' className='m-2' ><EmailIcon style={{ fontSize: '24px' }}/></a>
-                 
-                      </li>
-                    </ul>
-                  </div>
-              </nav>  
+
 
               <div>
               
               <section className="bg-white py-20">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap">
-          {/* Contact Details */}
-          <div className="w-full md:w-1/2 px-4 mb-8">
-            <div className="bg-black text-white rounded-lg p-6 shadow-md">
-              <div className="mb-4">
-                <h2 className="text-4xl font-bold mb-4">Contact Me!</h2>
-                <p>Email: redwanlmati@gmail.com</p>
-                <p>Phone: +2126 27-738567</p>
-                <br />
-                <p>Interested in working together and want to connect? If so, please fill out this form and I’ll get back to you. Thanks!</p>
-              </div>
-                <div className="flex flex-wrap items-center justify-center">
-                    <Link to="https://www.linkedin.com/in/redouane-lmati-3244451b8/" target="_blank" rel="noopener noreferrer"><LinkedInIcon style={{ fontSize: '30px' }}/></Link>
-                    <a href='#' className='m-2' ><InstagramIcon style={{ fontSize: '30px' }}/></a>
-                    <a href='mailto: redwanlmati5@gmail.com' className='m-2' ><EmailIcon style={{ fontSize: '30px' }}/></a>
-                </div>
-            </div>
+              <div className="container mx-auto px-4">
+                <div className="flex flex-wrap">
+                  {/* Contact Details */}
+                  <div className="w-full md:w-1/2 px-4 mb-8">
+                    <div className="bg-black text-white rounded-lg p-6 shadow-md">
+                      <div className="mb-4">
+                        <h2 className="text-4xl font-bold mb-4">Contact Me!</h2>
+                        <p>Email: redwanlmati@gmail.com</p>
+                        <p>Phone: +2126 27-738567</p>
+                        <br />
+                        <p>Interested in working together and want to connect? If so, please fill out this form and I’ll get back to you. Thanks!</p>
+                      </div>
+                        <div className="flex flex-wrap items-center justify-center">
+                            <Link to="https://www.linkedin.com/in/redouane-lmati-3244451b8/" target="_blank" rel="noopener noreferrer"><LinkedInIcon style={{ fontSize: '30px' }}/></Link>
+                            <a href='#' className='m-2' ><InstagramIcon style={{ fontSize: '30px' }}/></a>
+                            <a href='mailto: redwanlmati5@gmail.com' className='m-2' ><EmailIcon style={{ fontSize: '30px' }}/></a>
+                        </div>
+                    </div>
 
-            {/* Message Sent Notification */}
-            {showMessage && (
-                <div className={`fixed bottom-0 right-0 mb-10 mr-10 bg-green-500 text-white px-4 py-2 rounded-md shadow-md ${
-                    showMessage ? 'opacity-100' : 'opacity-0'
-                  } transition-opacity duration-500`}>
-                    Message sent successfuly!
-                </div>
-            )}
-            
-            
-          </div>
-          
-
-          {/* Contact Form */}
-          <div className="w-full md:w-1/2 px-4">
-            <div className="bg-white rounded-lg p-6 shadow-md">
-              <h2 className="text-4xl font-bold mb-8">Get In Touch</h2>
-              <form ref={form} onSubmit={sendEmail}>
-                <div className="mb-4">
-                  <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="firstName">
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    id="firstName"
-                    name="firstName"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                    className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500"
-                    placeholder="Enter your first name"
-                  />
-                </div>
-                <div className="mb-4">
-                  <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="lastName">
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    id="lastName"
-                    name="lastName"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
-                    className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500"
-                    placeholder="Enter your last name"
-                  />
-                </div>
-                <div className="mb-4">
-                  <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
-                    Phone
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={phone}
-                    onChange={(e) => setPhone(e.target.value)}
-                    className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500"
-                    placeholder="Enter your phone number"
-                  />
-                </div>
-                <div className="mb-4">
-                  <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={mail}
-                    onChange={(e) => setMail(e.target.value)}
-                    className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500"
-                    placeholder="Enter your email address"
-                  />
-                </div>
-                <div className="mb-4">
-                  <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
-                    Message
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500"
-                    placeholder="Type your message here"
-                  ></textarea>
-                </div>
-                <div className="flex justify-end">
-                  <button
-                    type="submit"
-                    className="px-6 py-3 bg-black text-white font-bold rounded-lg hover:bg-gray focus:outline-none focus:bg-gray"
-                  >
-                    Send Message
-                  </button>
+                  {/* Message Sent Notification */}
+                  {showMessage && (
+                      <div className={`fixed bottom-0 right-0 mb-10 mr-10 bg-green-500 text-white px-4 py-2 rounded-md shadow-md ${
+                          showMessage ? 'opacity-100' : 'opacity-0'
+                        } transition-opacity duration-500`}>
+                          Message sent successfuly!
+                      </div>
+                  )}
+                  
                   
                 </div>
-                
-              </form>
+          
+
+                {/* Contact Form */}
+                <div className="w-full md:w-1/2 px-4">
+                  <div className="bg-white rounded-lg p-6 shadow-md">
+                    <h2 className="text-4xl font-bold mb-8">Get In Touch</h2>
+                    <form ref={form} onSubmit={sendEmail}>
+                      <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="firstName">
+                          First Name
+                        </label>
+                        <input
+                          type="text"
+                          id="firstName"
+                          name="firstName"
+                          value={firstName}
+                          onChange={(e) => setFirstName(e.target.value)}
+                          className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500"
+                          placeholder="Enter your first name"
+                        />
+                      </div>
+                      <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="lastName">
+                          Last Name
+                        </label>
+                        <input
+                          type="text"
+                          id="lastName"
+                          name="lastName"
+                          value={lastName}
+                          onChange={(e) => setLastName(e.target.value)}
+                          className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500"
+                          placeholder="Enter your last name"
+                        />
+                      </div>
+                      <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="phone">
+                          Phone
+                        </label>
+                        <input
+                          type="tel"
+                          id="phone"
+                          name="phone"
+                          value={phone}
+                          onChange={(e) => setPhone(e.target.value)}
+                          className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500"
+                          placeholder="Enter your phone number"
+                        />
+                      </div>
+                      <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+                          Email
+                        </label>
+                        <input
+                          type="email"
+                          id="email"
+                          name="email"
+                          value={mail}
+                          onChange={(e) => setMail(e.target.value)}
+                          className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500"
+                          placeholder="Enter your email address"
+                        />
+                      </div>
+                      <div className="mb-4">
+                        <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="message">
+                          Message
+                        </label>
+                        <textarea
+                          id="message"
+                          name="message"
+                          rows="4"
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
+                          className="w-full px-4 py-3 border rounded-lg focus:outline-none focus:border-blue-500"
+                          placeholder="Type your message here"
+                        ></textarea>
+                      </div>
+                      <div className="flex justify-end">
+                        <button
+                          type="submit"
+                          className="px-6 py-3 bg-black text-white font-bold rounded-lg hover:bg-gray focus:outline-none focus:bg-gray"
+                        >
+                          Send Message
+                        </button>
+                        
+                      </div>
+                      
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          </section>
 
               </div>
 
