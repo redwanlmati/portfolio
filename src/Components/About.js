@@ -25,15 +25,15 @@ const About = () => {
 
 
 
-              <div className='content grid grid-cols-2 gap-4 lg:w-11/12 ml-auto mr-auto mt-16'>
+              <div className='content grid md:grid-cols-2 grid-cols-1 gap-4 lg:w-11/12 ml-auto mr-auto mt-16'>
                 
                
-                <div style={{width:"600px",}}>
+                <div className="w-200 md:w-9/12 md:p-0 p-5">
                     <img  src={personal} alt="personal image" className="image pp-image" />
                 </div>
              
 
-                <div className="flex items-center">
+                <div className="flex items-center md:p-0 p-8">
                    <div className="flex-col">
                     <h1 className="text-3xl font-bold">Hello, my name is Redwan. 👋</h1>
                     <br />
@@ -45,7 +45,7 @@ const About = () => {
 
                     </p>
                     <br /><br />
-                    <Link to="/contact"><button className="contact-button text-xl font-semibold justify-center p-3">Let's Connect<SendIcon className="ml-3" style={{fontSize:"24px", marginTop:"-5px"}}/></button></Link>
+                    <Link to="/portfolio/contact"><button className="contact-button text-xl font-semibold justify-center p-3">Let's Connect<SendIcon className="ml-3" style={{fontSize:"24px", marginTop:"-5px"}}/></button></Link>
                    </div>
                 </div>
                 

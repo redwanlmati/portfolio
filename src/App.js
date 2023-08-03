@@ -35,35 +35,35 @@ function App() {
         <Footer />
         </>
       }/>
-      <Route path="/drivethroughtime" element={
+      <Route path="/portfolio/drivethroughtime" element={
       <>
       <Header />
       <DriveTT />
       <Footer />
       </>
       } />
-      <Route path="/tecso" element={
+      <Route path="/portfolio/tecso" element={
       <>
       <Header />
       <Tecso />
       <Footer />
       </>
       } />
-      <Route path="/decory" element={
+      <Route path="/portfolio/decory" element={
       <>
       <Header />
       <Decory />
       <Footer />
       </>
       } />
-      <Route path="/about" element={
+      <Route path="/portfolio/about" element={
       <>
       <Header />
       <About />
       <Footer />
       </>
       } />
-      <Route path="/contact" element={
+      <Route path="/portfolio/contact" element={
       <>
       <Header />
       <Contact />
